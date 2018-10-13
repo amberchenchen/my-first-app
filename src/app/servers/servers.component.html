@@ -1,0 +1,21 @@
+<label>Server Name</label>
+<!-- <input type="text" class="form-control" (input)="updateServerName($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<p>{{ serverName }}</p>
+
+<button class="btn btn-primary" [disabled]="allowAddServer" (click)="onCreate()">Add Server</button>
+<button class="btn btn-primary" (click)="onReset()" [disabled]="serverName == ''">Reset</button>
+<p>{{ serverCreationStatus }}</p>
+<p *ngIf="serverCreated">Test ngIF</p>
+<p [ngStyle]="{backgroundColor: getColor()}">Test ngStyle</p>
+<p [ngClass]="onLine">Test ngClass</p>
+<!-- <p [innerText]="allowAddServer"></p> -->
+<app-server *ngFor="let server of servers"></app-server>
+
+
+<button class="btn btn-primary" (click)="onDisplay()">Display details</button>
+<p *ngFor="let d of details; let i = index" 
+    [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white-text': i >= 5}">
+    {{ d }}
+</p>
