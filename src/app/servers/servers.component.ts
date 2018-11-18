@@ -48,4 +48,8 @@ export class ServersComponent implements OnInit {
   onDisplay(){
       this.details.push(new Date());
   }
+
+  onRemoveServer(index:any){
+    this.servers.splice(index+1,1);
+  }
 }

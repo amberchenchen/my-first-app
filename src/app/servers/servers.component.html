@@ -10,7 +10,7 @@
 <p [ngStyle]="{backgroundColor: getColor()}">Test ngStyle</p>
 <p [ngClass]="onLine">Test ngClass</p>
 <!-- <p [innerText]="allowAddServer"></p> -->
-<app-server *ngFor="let server of servers"></app-server>
+<app-server *ngFor="let server of servers;let i = index" (click)="onRemoveServer(i)"></app-server>
 
 
 <button class="btn btn-primary" (click)="onDisplay()">Display details</button>
